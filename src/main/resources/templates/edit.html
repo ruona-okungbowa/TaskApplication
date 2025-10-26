@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Add New Task</title>
+    <title>Edit Task</title>
 
     <!-- Boxicons CSS -->
     <link
@@ -17,8 +17,8 @@
 <div th:replace="fragments/sidebar :: sidebar"></div>
 <main class="home">
     <div class="profile-container">
-        <h1>Add New Task</h1>
-        <form class="add-task-card" method="post" th:action="@{/api/tasks/add}" th:object="${task}">
+        <h1>Edit Task</h1>
+        <form class="add-task-card" method="post" th:action="@{/api/tasks/update}" th:object="${task}">
             <div class="form-group">
                 <label for="taskTitle">Task Title:</label>
                 <input id="taskTitle" name="title" placeholder="Enter task title" required th:field="*{title}"
@@ -33,8 +33,9 @@
                 <label for="dueDate">Due Date:</label>
                 <input id="dueDate" name="dueDate" required th:field="*{dueDate}" type="date"/>
             </div>
-            <button class="btn btn-add" type="submit">Add Task</button>
+            <button class="btn btn-add" type="submit">Update Task</button>
         </form>
+
     </div>
 </main>
 <script th:src="@{/js/index.js}"></script>
